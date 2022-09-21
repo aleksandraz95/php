@@ -1,0 +1,151 @@
+body{
+	background: url(https://www.solidbackgrounds.com/images/1920x1080/1920x1080-bottle-green-solid-color-background.jpg);
+	 background-size: cover;
+}
+h1{
+	text-align:center;
+	margin: 10px 10px 10px 10px;
+	font-style:italic;
+	padding:20px 40px 25px;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	color:#8080ff;
+	font-size: 60px;
+}
+#profile{
+	margin-top:5px;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	
+}
+#welcome{
+	margin-left:5px;
+	margin-right:10px;
+	font-size: 16px;
+}
+#logout{
+	margin-left:10px;
+	color:#000000;
+	border-style: outset;
+	border-color: black;
+	padding: 2px 2px 2px 2px;
+	font-size:14px;
+}
+ul{
+	list-style-type: square;
+	font-style:italic;
+	font-size: 20px;
+	margin-left:600px;
+	margin-right:100px;
+}
+a:link {
+  text-decoration: none;
+  color:black;
+  margin-bottom:2px;
+  margin-top:2px;
+}
+
+a:visited {
+  text-decoration: none;
+  color:black;
+  margin-bottom:2px;
+  margin-top:2px;
+}
+
+a:hover {
+  text-decoration: underline;
+  background-color:#6666ff;
+  margin-bottom:2px;
+  margin-top:2px;
+}
+
+a:active {
+  text-decoration: underline;
+  margin-bottom:2px;
+  margin-top:2px;
+}
+
+table {
+  border-collapse: collapse;
+  border-style:groove double;
+  border-color:#6666ff;
+  border-width:6px;
+  background-color: #e6e6ff;
+  width: 90%;
+  margin-left:70px;
+  border-radius:10px;
+}
+th{
+	height: 40px;
+	background: #ccccff;
+	text-align: center;
+}
+th, td{
+	
+	padding: 8px;
+	border-bottom: 1px solid #6666ff;
+}
+td {
+  text-align:center;
+  color: black;
+}
+
+form{
+	margin-left:450px;
+}
+
+input[type=text]{
+	
+  width: 50%;
+  padding: 8px 8px;
+  margin: 0px 0px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+
+}
+
+input[type=submit]{
+	width:50%;
+	background-color:#8080ff;
+	color:black;
+	border:2px solid #ccccff;
+	padding:10px;
+	font-size:20px;
+	cursor:pointer;
+	border-radius:5px;
+	margin-top:10px;
+	margin-bottom:10px
+}
+#user{
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	font-size:15px;
+	font-style:italic;
+}
+
+
+.topnav {
+  background-color: green;
+  overflow: hidden;
+}
+
+.topnav a {
+  float: left;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 200px;
+}
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  color: white;
+}
+
+
+
+
+
