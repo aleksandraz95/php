@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 21, 2022 at 01:45 PM
+-- Generation Time: Dec 20, 2023 at 02:34 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -29,18 +29,20 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `knjizara` (
   `id` int(11) NOT NULL,
-  `naziv` varchar(20) NOT NULL,
-  `autor` varchar(20) NOT NULL,
-  `zanr` varchar(10) NOT NULL,
-  `cena` float NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `naziv` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `autor` text COLLATE utf8_unicode_ci NOT NULL,
+  `cena` double NOT NULL,
+  `userId` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `knjizara`
 --
 
-INSERT INTO `knjizara` (`id`, `naziv`, `autor`, `zanr`, `cena`) VALUES
-(3, 'Hari Poter', 'Rouling', 'Fantastika', 1299.99);
+INSERT INTO `knjizara` (`id`, `naziv`, `autor`, `cena`, `userId`) VALUES
+(1, 'Gospodar prstenova', 'Tolkin', 900, 1),
+(2, 'Sneško', 'Nesbe', 800, 1),
+(3, 'Zlocin i kazna', 'Dostojevski', 1200, 2);
 
 -- --------------------------------------------------------
 
@@ -49,18 +51,17 @@ INSERT INTO `knjizara` (`id`, `naziv`, `autor`, `zanr`, `cena`) VALUES
 --
 
 CREATE TABLE `user` (
-  `userId` int(10) NOT NULL,
-  `username` varchar(20) NOT NULL,
-  `password` varchar(20) NOT NULL,
-  `name` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `userId` int(11) NOT NULL,
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`userId`, `username`, `password`, `name`) VALUES
-(1, 'sandra', '123', 'Aleksandra');
+INSERT INTO `user` (`userId`, `name`) VALUES
+(1, 'Sandra'),
+(2, 'Dragana');
 
 --
 -- Indexes for dumped tables
@@ -70,7 +71,8 @@ INSERT INTO `user` (`userId`, `username`, `password`, `name`) VALUES
 -- Indexes for table `knjizara`
 --
 ALTER TABLE `knjizara`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_user` (`userId`);
 
 --
 -- Indexes for table `user`
@@ -86,7 +88,23 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `knjizara`
 --
 ALTER TABLE `knjizara`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+
+--
+-- AUTO_INCREMENT for table `user`
+--
+ALTER TABLE `user`
+  MODIFY `userId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `knjizara`
+--
+ALTER TABLE `knjizara`
+  ADD CONSTRAINT `userId_fk` FOREIGN KEY (`userId`) REFERENCES `user` (`userId`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
